@@ -128035,14 +128035,31 @@ window.App = {
       App.contracts.DMV.setProvider(App.web3Provider);
 
       return App.bindEvents();*/
-    $.getJSON("./contracts/DMV.json", function(dmv) {
+     $.getJSON("./contracts/DMV.json", function(dmv) {
       // Instantiate a new truffle contract from the artifact
       App.contracts.DMV = TruffleContract(dmv);
       // Connect provider to interact with contract
       App.contracts.DMV.setProvider(App.web3Provider);
 
       return App.bindEvents();
-    });
+    }).fail(function() {
+		console.log( "error with ./contracts/DMV.json url" );
+		console.log("Trying ../../build/contracts/DMV.json");
+		
+		$.getJSON("../../build/contracts/DMV.json", function(dmv) {
+		  // Instantiate a new truffle contract from the artifact
+		  App.contracts.DMV = TruffleContract(dmv);
+		  // Connect provider to interact with contract
+		  App.contracts.DMV.setProvider(App.web3Provider);
+
+		  return App.bindEvents();
+		}).fail(function() {
+			console.log( "error with ../../build/contracts/DMV.json url" );
+			console.log("Faile to load DMV.json");
+			
+		});
+		
+	});
   },
 
 

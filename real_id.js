@@ -128046,7 +128046,24 @@ window.App = {
       App.contracts.DMV.setProvider(App.web3Provider);
 
       return App.bindEvents();
-    });
+	}).fail(function() {
+		console.log( "error with ./contracts/DMV.json url" );
+		console.log("Trying ../../build/contracts/DMV.json");
+		
+		$.getJSON("../../build/contracts/DMV.json", function(dmv) {
+		  // Instantiate a new truffle contract from the artifact
+		  App.contracts.DMV = TruffleContract(dmv);
+		  // Connect provider to interact with contract
+		  App.contracts.DMV.setProvider(App.web3Provider);
+
+		  return App.bindEvents();
+		}).fail(function() {
+			console.log( "error with ../../build/contracts/DMV.json url" );
+			console.log("Faile to load DMV.json");
+			
+		});
+		
+	});
   },
 
 
@@ -128090,7 +128107,7 @@ window.App = {
 	
 	//Check if Logged on else go to login page
 	App.contracts.DMV.deployed().then(function(contractInstance) {
-                 contractInstance.getAccount.call().then(function(account) {
+                 contractInstance.getAccount(App.account).then(function(account) {
 					 console.log("Account Information for logged in user");
 					 console.log(account);
 					 
@@ -128302,7 +128319,7 @@ window.App = {
 			console.log(fieldValues);
 			//TO DO: Add contract function to update user info and store realID Documentation
 			App.contracts.DMV.deployed().then(function(contractInstance) {
-                 contractInstance.getAccount.call().then(function(account) {
+                 contractInstance.getAccount(App.account).then(function(account) {
 					 console.log("Account Information for logged in user");
 					 console.log(account);
 					 if(account[0] == "" && account[1] == "" && account[2] == ""){

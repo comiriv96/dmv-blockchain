@@ -128036,14 +128036,31 @@ window.App = {
       App.contracts.DMV.setProvider(App.web3Provider);
 
       return App.bindEvents();*/
-    $.getJSON("./contracts/DMV.json", function(dmv) {
+     $.getJSON("./contracts/DMV.json", function(dmv) {
       // Instantiate a new truffle contract from the artifact
       App.contracts.DMV = TruffleContract(dmv);
       // Connect provider to interact with contract
       App.contracts.DMV.setProvider(App.web3Provider);
 
       return App.bindEvents();
-    });
+    }).fail(function() {
+		console.log( "error with ./contracts/DMV.json url" );
+		console.log("Trying ../../build/contracts/DMV.json");
+		
+		$.getJSON("../../build/contracts/DMV.json", function(dmv) {
+		  // Instantiate a new truffle contract from the artifact
+		  App.contracts.DMV = TruffleContract(dmv);
+		  // Connect provider to interact with contract
+		  App.contracts.DMV.setProvider(App.web3Provider);
+
+		  return App.bindEvents();
+		}).fail(function() {
+			console.log( "error with ../../build/contracts/DMV.json url" );
+			console.log("Faile to load DMV.json");
+			
+		});
+		
+	});
   },
 
 
@@ -128101,7 +128118,7 @@ window.App = {
 	
 	//Populate Account Information
 	App.contracts.DMV.deployed().then(function(contractInstance) {
-                 contractInstance.getAccount.call().then(function(account) {
+                 contractInstance.getAccount(App.account).then(function(account) {
 					 console.log("Account Information for logged in user");
 					 console.log(account);
 					 
@@ -128165,7 +128182,7 @@ window.App = {
 	
 	//Total Vital Record Requests
 	App.contracts.DMV.deployed().then(function(contractInstance) {
-                 contractInstance.getRecordRequestCount.call().then(function(account) {
+                 contractInstance.getRecordRequestCount(App.account).then(function(account) {
 					 console.log("Total Vital record request count");
 					 console.log(account["words"][0]);
 					 var requestCount = account["words"][0];
@@ -128216,7 +128233,7 @@ window.App = {
 	
 	//Get Sold Vehicles
 	App.contracts.DMV.deployed().then(function(contractInstance) {
-                 contractInstance.getSoldVehicleReceiptCountAndCarTitles.call().then(function(account) {
+                 contractInstance.getSoldVehicleReceiptCountAndCarTitles(App.account).then(function(account) {
 					 console.log("Total Sold Vehicle Count");
 					 console.log(account[0]["words"][0]);
 					 console.log("Car Titles");
@@ -128277,7 +128294,7 @@ window.App = {
 	
 	//Get Reported Vehicles
 	App.contracts.DMV.deployed().then(function(contractInstance) {
-                 contractInstance.getReportedVehicleCount.call().then(function(account) {
+                 contractInstance.getReportedVehicleCount(App.account).then(function(account) {
 					 console.log("Total Reported Vehicle Count");
 					 console.log(account["words"][0]);
 					 var requestCount = account["words"][0];
@@ -128331,7 +128348,7 @@ window.App = {
 	
 	//Get Car Title Information
 	App.contracts.DMV.deployed().then(function(subcontractInstance) {
-								 subcontractInstance.getCarTitleInformation.call().then(function(account) {
+								 subcontractInstance.getCarTitleInformation(App.account).then(function(account) {
 									 console.log("Car Title Information for logged in user");
 									 console.log(account);
 									 var data;

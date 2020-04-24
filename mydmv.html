@@ -1,0 +1,170 @@
+<html>
+      <head>
+              <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </head>
+        <body>
+            <!-- Navigation bar -->
+            <div id="pag-nav">
+              <nav class="navbar navbar-inverse">
+                   <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-sm-5">
+                         <ul class="nav navbar-nav">
+                           <li><a href="index.html">Home</a></li>
+                           <li class="active"><a href="mydmv.html">MyDMV Account</a></li>
+                           <li><a href="about.html">About</a></li>
+						   <li><a style="padding-top:5px;padding-bottom:5px;margin-top:25px;margin-left:3px;background-color:#ad920f;color:white" role="button" class="btn">Logout</a></li>
+                         </ul>
+                       </div>
+                      <div class="col-sm-4" style="text-align:center">
+                         <div class="navbar-header">
+                           <a class="navbar-brand" href="#">DMV of Virginia</a>
+                         </div>
+                       </div>
+					   <div class="col-sm-3" style="padding-left:5px">
+                         <ul class="nav navbar-nav">
+                           <li><a href="http://www.virginia.gov/">Virginia.gov</a></li>
+                           <li><a href="http://www.virginia.gov/government/state-employees/agency-directory">Agencies</a></li>
+                           <li><a href="http://www.governor.virginia.gov/">Governor</a></li>
+                         </ul>
+                       </div>
+                    </div>
+                   </div>
+               </nav>
+            </div>
+            <!-- Navigation Bar ends -->
+			<!-- Modal -->
+			<div id="myModal" class="modal">
+			  <div class="modal-content" style="text-align:center">
+				<h1>Information is being uploaded</h1>
+				<h1>Please Wait...</h1>
+			  </div>
+			</div>
+			<!-- Modal ends -->
+           <div class="container-fluid" style="width:1100px">
+              <div class="row" style="background-color:green;color:white">
+						<div class="col-md-8 mb-3">
+						  <h2>Account Information</h2>
+						</div>
+			  </div>
+			  <div id="userInfoButton" class="row expandable">
+						<div class="col-md-8 mb-3">
+						  <h3 type="button" class="collapsible">User Information&nbsp;<i class="arrow right"></i></h2>
+						</div>
+			  </div>
+			  <div id="userInfo" class="content">
+			     <br>
+			  </div>
+			  <div id="testPracticeInfoButton" class="row expandable">
+						<div class="col-md-8 mb-3">
+						  <h3 type="button" class="collapsible">Practice Tests&nbsp;<i class="arrow right"></i></h2>
+						</div>
+			  </div>
+			  <div id="testPracticeInfo" class="content">
+			    <br>
+			  </div>
+			  <div id="realIDInfoButton" class="row expandable">
+						<div class="col-md-4 mb-3">
+						  <h3 type="button" class="collapsible">Real ID Documentation&nbsp;<i class="arrow right"></i></h2>
+						</div>
+			  </div>
+			  <div id="realIDInfo" class="content">
+			    <br>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+						<div class="col-md-8 mb-3">
+						  <h2>Vital Records</h2>
+						</div>
+			  </div>
+			  <div id="vitalRecordRequests">
+				  <div id="vitalRecordButton0" class="row">
+							<div class="col-md-8 mb-3">
+							  <h3>No Records</h2>
+							</div>
+				  </div>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+						<div class="col-md-8 mb-3">
+						  <h2>Owned Car Titles</h2>
+						</div>
+			  </div>
+			  <div id="carTitles">
+				  <div id="carTitleRecordButton0" class="row">
+							<div class="col-md-8 mb-3">
+							  <h3>No Records</h2>
+							</div>
+				  </div>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+						<div class="col-md-8 mb-3">
+						  <h2>Sold/Donated Vehicles</h2>
+						</div>
+			  </div>
+			  <div id="soldVehicles">
+				  <div id="soldVehicleRecordButton0" class="row">
+							<div class="col-md-8 mb-3">
+							  <h3>No Records</h2>
+							</div>
+				  </div>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+						<div class="col-md-8 mb-3">
+						  <h2>Reported Vehicles to DMV</h2>
+						</div>
+			  </div>
+			  <div id="reportedVehicles">
+				  <div id="reportedVehicleRecordButton0" class="row">
+							<div class="col-md-8 mb-3">
+							  <h3>No Records</h2>
+							</div>
+				  </div>
+			  </div>
+          </div>
+        </body>
+		<script src="./mydmv.js"></script>
+</html>
+
+<style>
+
+.content {
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.expandable{
+  background-color:blue;
+  color:white;
+  border-bottom:1px solid black;
+}
+
+.active, .expandable:hover {
+  background-color:#10107b;
+  color:white;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+</style>

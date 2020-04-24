@@ -1,0 +1,202 @@
+<html>
+      <head>
+              <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </head>
+        <body>
+            <!-- Navigation bar -->
+            <div id="pag-nav">
+              <nav class="navbar navbar-inverse">
+                   <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-sm-5">
+                         <ul class="nav navbar-nav">
+                           <li><a href="index.html">Home</a></li>
+                           <li><a href="mydmv.html">MyDMV Account</a></li>
+                           <li><a href="about.html">About</a></li>
+						   <li><a style="padding-top:5px;padding-bottom:5px;margin-top:25px;margin-left:3px;background-color:#ad920f;color:white" title="Logout Button" role="button" class="btn">Logout</a></li>
+                         </ul>
+                       </div>
+                      <div class="col-sm-4" style="text-align:center">
+                         <div class="navbar-header">
+                           <a class="navbar-brand" href="#">DMV of Virginia</a>
+                         </div>
+                       </div>
+					   <div class="col-sm-3" style="padding-left:5px">
+                         <ul class="nav navbar-nav">
+                           <li><a href="http://www.virginia.gov/">Virginia.gov</a></li>
+                           <li><a href="http://www.virginia.gov/government/state-employees/agency-directory">Agencies</a></li>
+                           <li><a href="http://www.governor.virginia.gov/">Governor</a></li>
+                         </ul>
+                       </div>
+                    </div>
+                   </div>
+               </nav>
+            </div>
+            <!-- Navigation Bar ends -->
+			<!-- Modal -->
+			<div id="myModal" class="modal">
+			  <div class="modal-content" style="text-align:center">
+				<h1>Information is being uploaded</h1>
+				<h1>Please Wait...</h1>
+			  </div>
+			</div>
+			<!-- Modal ends -->
+			<div class="container-fluid" style="background-color:lightgray;width:800px">
+			 <form id="customForm">
+			  <div class="row" style="background-color:#fff">
+				  <h1 style="text-align:center;" >Vehicle Registration Renewal</h1>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+				<div class="col-md-5 mb-3">
+				  <h2>Vehicle Information</h2>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="validationDefault01">Vehicle Identification Number</label>
+				  <input title="Vehicle Identification Number" type="text" class="form-control" id="validationDefault01" placeholder="Vehicle Identification Number" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Number
+				  </div>
+				</div>
+				<div class="col-md-6 mb-3">
+				  <label for="validationDefault01">Plate/Decal/Metal Tag Number</label>
+				  <input title="Plate/Decal/Metal Tag Number" type="text" class="form-control" id="validationDefault01" placeholder="Plate/Decal/Metal Tag Number" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Number
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Make</label>
+				  <input title="Make" type="text" class="form-control" id="validationDefault01" placeholder="Make" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Make
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Model</label>
+				  <input title="Model" type="text" class="form-control" id="validationDefault01" placeholder="Model" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Model
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Model Year</label>
+				  <input title="Model Year" type="text" class="form-control" id="validationDefault01" placeholder="Model Year" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Year
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="validationDefault01">Certificate of Title Number</label>
+				  <input title="Certificate of Title Number" type="text" class="form-control" id="validationDefault01" placeholder="Certificate of Title Number" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Number
+				  </div>
+				</div>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+				<div class="col-md-8 mb-3">
+				  <h2>Registration Renewal Information</h2>
+				</div>
+			  </div>
+			  <div class="input-group row radioQuestion" title="Renew for">
+					<div class="col-md-12 mb-3">
+					  <label title="Renew for" for="validationDefault05">Renew for</label>
+						  <div class="col-sm-13">
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios1" value="1">
+							  <label for="gridRadios1">
+								1 year
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios2" value="2">
+							  <label for="gridRadios2">
+								2 year
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios3" value="3">
+							  <label for="gridRadios3">
+								3 year
+							  </label>
+							</div>
+						  </div>
+					</div>
+			  </div>
+			  <div class="row">
+				  <div class="col-md-6 mb-3">
+					  <label for="validationDefault01">Renewal Expiration Date</label>
+					  <input title="Renewal Expiration Date" type="date" class="form-control" id="validationDefault01" placeholder="Expiration Date" disabled>
+					  <div class="field-invalid-feedback" style="display:none">
+						  Format must be dd/mm/yyyy
+					  </div>
+				 </div>
+			  </div>
+			  <div class="input-group row radioQuestion" title="Insurance Certification">
+					<div class="col-md-12 mb-3">
+					  <label title="Insurance Certification" for="validationDefault05">Insurance Certification</label>
+						  <div class="col-sm-13">
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios4" value="option1">
+							  <label for="gridRadios1">
+								This vehicle is insured by a liability policy issued through an insurance company licensed to do business in Virginia and it will remain insured while registered, whether or not it is operated. 
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios5" value="option2">
+							  <label for="gridRadios2">
+								This vehicle is not insured; therefore, I am remitting the applicable uninsured motor vehicle fee. 
+							  </label>
+							</div>
+						  </div>
+					</div>
+			  </div>
+			  <div class="input-group row radioQuestion" title="Personal Property Tax Relief">
+					<div class="col-md-12 mb-3">
+					  <label title="Personal Property Tax Relief" for="validationDefault05">Personal Property Tax Relief</label>
+						  <div class="col-sm-13">
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios6" value="option1">
+							  <label for="gridRadios1">
+								Personal Use
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios7" value="option2">
+							  <label for="gridRadios2">
+								Business Use
+							  </label>
+							</div>
+						  </div>
+					</div>
+			  </div>
+			  <br>
+			  <button title="Submit Button" class="btn btn-primary">Submit form</button>
+			 </form>
+		    </div>
+			<br>
+			<br>
+			<br>
+           <div class="container-fluid">
+              <div class="row">
+                      <div class=" col-sm-offset-1 col-sm-10">
+                     </div>
+              </div>   <!--  row ends -->
+          </div>
+        </body>
+		<script src="./vehicle_regist_renew.js"></script>
+</html>

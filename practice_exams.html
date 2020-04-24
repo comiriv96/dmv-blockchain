@@ -1,0 +1,543 @@
+<html>
+      <head>
+              <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </head>
+        <body>
+            <!-- Navigation bar -->
+            <div id="pag-nav">
+              <nav class="navbar navbar-inverse">
+                   <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-sm-5">
+                         <ul class="nav navbar-nav">
+                           <li><a href="index.html">Home</a></li>
+                           <li><a href="mydmv.html">MyDMV Account</a></li>
+                           <li><a href="about.html">About</a></li>
+						   <li><a style="padding-top:5px;padding-bottom:5px;margin-top:25px;margin-left:3px;background-color:#ad920f;color:white" title="Logout Button" role="button" class="btn">Logout</a></li>
+                         </ul>
+                       </div>
+                      <div class="col-sm-4" style="text-align:center">
+                         <div class="navbar-header">
+                           <a class="navbar-brand" href="#">DMV of Virginia</a>
+                         </div>
+                       </div>
+					   <div class="col-sm-3" style="padding-left:5px">
+                         <ul class="nav navbar-nav">
+                           <li><a href="http://www.virginia.gov/">Virginia.gov</a></li>
+                           <li><a href="http://www.virginia.gov/government/state-employees/agency-directory">Agencies</a></li>
+                           <li><a href="http://www.governor.virginia.gov/">Governor</a></li>
+                         </ul>
+                       </div>
+                    </div>
+                   </div>
+               </nav>
+            </div>
+			<!-- Modal -->
+			<div id="myModal" class="modal">
+			  <div class="modal-content" style="text-align:center">
+				<h1>Information is being uploaded</h1>
+				<h1>Please Wait...</h1>
+			  </div>
+			</div>
+			<!-- Modal ends -->
+			<div class="container-fluid" style="background-color:lightgray;width:1300px">
+				<div class="row" style="background-color:#fff">
+						  <button title="Commercial Button" type="button" class="btn btn-default">Commercial Drive Practice Test</button>
+						  <button title="Salesperson Button" type="button" class="btn btn-default">Salesperson Practice Test</button>
+						  <button title="Dealer or Operator Button" type="button" class="btn btn-default">Dealer/Operator Practice Test</button>
+				</div>
+				<form id="customForm">
+				  <div id="section1" style="display:none">
+					  <div class="row" style="background-color:#fff">
+						  <h1 style="text-align:center;" >Commercial Driver Practice Test</h1>
+					  </div>
+					  <div class="row" style="background-color:green;color:white">
+						<div class="col-md-4 mb-3">
+						  <h2>Questions</h2>
+						</div>
+						  </div>
+					  <div class="input-group row" title='Question 1'>
+						<div class="col-md-12 mb-3">
+						  <label title="Question 1" for="validationDefault01">When Hauling hazardous materials, you should check your tires every</label>
+							  <div class="col-sm-13">
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios1" value="option1">
+								  <label for="gridRadios1">
+									eight hours/1,000 miles
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios2" value="option2">
+								  <label for="gridRadios2">
+									hour/50 miles
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios3" value="option3">
+								  <label for="gridRadios3">
+									six hours/300 miles
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios3" value="option4">
+								  <label for="gridRadios4">
+									two hours/100 miles
+								  </label>
+								</div>
+							  </div>
+						</div>
+					  </div>
+					  <div class="input-group row" title='Question 2'>
+						<div class="col-md-12 mb-3">
+						  <label title="Question 2" for="validationDefault01">If you find anything unsafe during the pre-trip inpsection, 
+						  federal and state laws require you to</label>
+							  <div class="col-sm-13">
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios4" value="option1">
+								  <label for="gridRadios1">
+									fix it before the end of the day
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios5" value="option2">
+								  <label for="gridRadios2">
+									fix it before you drive
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios6" value="option3">
+								  <label for="gridRadios3">
+									drive slowly on back roads
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios7" value="option4">
+								  <label for="gridRadios4">
+									ask your supervisor
+								  </label>
+								</div>
+							  </div>
+						</div>
+					  </div>
+					  <div class="input-group row" title="Question 3">
+						<div class="col-md-12 mb-3">
+						  <label title="Question 3" for="validationDefault03">If the road is icy</label>
+							  <div class="col-sm-13">
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios8" value="option1">
+								  <label for="gridRadios1">
+									reduce your speed and stop driving as soon as you can
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios9" value="option2">
+								  <label for="gridRadios2">
+									maintain your speed; do not apply your brakes
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios10" value="option3">
+								  <label for="gridRadios3">
+									do not drive in reverse
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios11" value="option4">
+								  <label for="gridRadios4">
+									increase your speed to maintain stability
+								  </label>
+								</div>
+							  </div>
+						</div>
+					  </div>
+					  <div class="input-group row" title="Question 4">
+						<div class="col-md-12 mb-3">
+						  <label title="Question 4" for="validationDefault04">Gross vehicle weight (GVW) is defined as</label>
+							   <div class="col-sm-13">
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios12" value="option1">
+								  <label for="gridRadios1">
+									the total weight of a single vehicle plus the cargo
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios13" value="option2">
+								  <label for="gridRadios2">
+									the total weight of the cargo you are carrying
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios14" value="option3">
+								  <label for="gridRadios3">
+									axle weight plus gross combination weight
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios15" value="option4">
+								  <label for="gridRadios4">
+									the total weight of a single vehicle plus the cargo, minus fuel
+								  </label>
+								</div>
+							  </div>
+						</div>
+					  </div>
+				  <div class="input-group row" title="Question 5">
+					<div class="col-md-12 mb-3">
+					  <label title="Question 5" for="validationDefault05">When turning left at an intersection</label>
+						  <div class="col-sm-13">
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios5" id="gridRadios16" value="option1">
+							  <label for="gridRadios1">
+								turn before you reach the center of the intersection
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios5" id="gridRadios17" value="option2">
+							  <label for="gridRadios2">
+								flash your high beams
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios5" id="gridRadios18" value="option3">
+							  <label for="gridRadios3">
+								use your horn
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios5" id="gridRadios19" value="option4">
+							  <label for="gridRadios4">
+								reach the center of the intersection before you begin your turn
+							  </label>
+							</div>
+						  </div>
+					</div>
+				  </div>
+				  <br>
+				  <button title="Submit Button 1" class="btn btn-primary">Submit form</button>
+				  <br>
+				  </div>
+				  <div id="section2" style="display:none">
+					  <div class="row" style="background-color:#fff">
+						  <h1 style="text-align:center;" >Salesperson Practice Test</h1>
+					  </div>
+					  <div class="row" style="background-color:green;color:white">
+						<div class="col-md-4 mb-3">
+						  <h2>Questions</h2>
+						</div>
+					  </div>
+					  <div class="row" title="Question 1">
+							<div class="col-md-14 mb-3">
+							  <label title="Question 1" for="validationDefault01">A salesperson's "certification of qualification"</label>
+								  <div class="col-sm-14">
+									<div class="form-check">
+									  <input class="form-check-input" type="radio" name="gridRadios6" id="gridRadios20" value="option1">
+									  <label for="gridRadios1">
+										Is issued by the dealer after the person has completed the prescribed apprenticeship
+									  </label>
+									</div>
+									<div class="form-check">
+									  <input class="form-check-input" type="radio" name="gridRadios6" id="gridRadios21" value="option2">
+									  <label for="gridRadios2">
+										Allows a person to sell motor vehicles
+									  </label>
+									</div>
+									<div class="form-check">
+									  <input class="form-check-input" type="radio" name="gridRadios6" id="gridRadios22" value="option3">
+									  <label for="gridRadios3">
+										Must be obtained before applying for a salesperson's license
+									  </label>
+									</div>
+								</div>
+							</div>
+						</div>
+					  <div class="row" title="Question 2">
+						<div class="col-md-13 mb-3">
+						  <label title="Question 2" for="validationDefault01">If a dealer charges a processing fee, it</label>
+							  <div class="col-sm-13">
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios7" id="gridRadios23" value="option1">
+								  <label for="gridRadios1">
+									Must be posted in the public sales area and clearly visible
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios7" id="gridRadios24" value="option2">
+								  <label for="gridRadios2">
+									Must be a minimum of $100.00
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios7" id="gridRadios25" value="option3">
+								  <label for="gridRadios3">
+									A and B above
+								  </label>
+								</div>
+							  </div>
+						</div>
+					  </div>
+					  <div class="row" title="Question 3">
+						<div class="col-md-13 mb-3">
+						  <label title="Question 3" for="validationDefault03">Temporary transport plates may be issued for</label>
+							  <div class="col-sm-13">
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios8" id="gridRadios26" value="option1">
+								  <label for="gridRadios1">
+									5 days
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios8" id="gridRadios27" value="option2">
+								  <label for="gridRadios2">
+									30 days
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios8" id="gridRadios28" value="option3">
+								  <label for="gridRadios3">
+									10 days
+								  </label>
+								</div>
+							  </div>
+						</div>
+					  </div>
+				  <div class="row" title="Question 4">
+					<div class="col-md-13 mb-3">
+					  <label title="Question 4" for="validationDefault04">A dealer makes a good will substitution for a vehicle previously delivered
+					   and titled to a customer. The sales and use tax refund process is</label>
+						   <div class="col-sm-13">
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios9" id="gridRadios29" value="option1">
+							  <label for="gridRadios1">
+								Send a letter to DMV with the proper form completed
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios9" id="gridRadios30" value="option2">
+							  <label for="gridRadios2">
+								Any additional tax is paid to DMV. If the tax on the placement is less, the difference is not refundable
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios9" id="gridRadios31" value="option3">
+							  <label for="gridRadios3">
+								The tax is not refundable
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios9" id="gridRadios32" value="option4">
+							  <label for="gridRadios4">
+								Tax is refundable only if the substiution is made within 3 days after the original sale
+							  </label>
+							</div>
+						  </div>
+					</div>
+				  </div>
+				  <div class="row" title="Question 5">
+					<div class="col-md-13 mb-3">
+					  <label title="Question 5" for="validationDefault05">The IRS Cash Reporting Rule, enacted to prevent citizens
+					  from hiding unreported income, requires dealerships to complete and file IRS form 8300 when cash receipts
+					  exceed the following dollar amount</label>
+						  <div class="col-sm-13">
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios10" id="gridRadios33" value="option1">
+							  <label for="gridRadios1">
+								$7,000.00
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios10" id="gridRadios34" value="option2">
+							  <label for="gridRadios2">
+								$8,300.00
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios10" id="gridRadios35" value="option3">
+							  <label for="gridRadios3">
+								$10,000.00
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios10" id="gridRadios36" value="option4">
+							  <label for="gridRadios4">
+								$20,000.00
+							  </label>
+							</div>
+						  </div>
+					</div>
+				  </div>
+				  <br>
+				  <button title="Submit Button 2" class="btn btn-primary">Submit form</button>
+				  <br>
+				  </div>
+				  <div id="section3" style="display:none">
+					  <div class="row" style="background-color:#fff">
+						  <h1 style="text-align:center;" >Dealer/Operator Test</h1>
+					  </div>
+					  <div class="row" style="background-color:green;color:white">
+						<div class="col-md-4 mb-3">
+						  <h2>Questions</h2>
+						</div>
+					  </div>
+					<div class="row" title="Question 1">
+						<div class="col-md-13 mb-3">
+						  <label title="Question 1" for="validationDefault01">"Drive Train or Power Train" is a sufficient description of systems 
+						  covered under warranty without further explanation on the Buyer's Guide</label>
+							  <div class="col-sm-13">
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios11" id="gridRadios37" value="option1">
+								  <label for="gridRadios1">
+									True
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios11" id="gridRadios38" value="option2">
+								  <label for="gridRadios2">
+									False
+								  </label>
+							  </div>
+							</div>
+						</div>
+					</div>
+					<div class="row" title="Question 2">
+						<div class="col-md-13 mb-3">
+						  <label title="Question 2" for="validationDefault01">Which of the following terms cannot be used 
+						  in an advertisement WITHOUT ALSO DECLARING THEY ARE USED</label>
+							  <div class="col-sm-13">
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios12" id="gridRadios39" value="option1">
+								  <label for="gridRadios1">
+									Special Purchase
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios12" id="gridRadios40" value="option2">
+								  <label for="gridRadios2">
+									Program car
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios12" id="gridRadios41" value="option3">
+								  <label for="gridRadios3">
+									Demonstrator or former lease or rental
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios12" id="gridRadios42" value="option4">
+								  <label for="gridRadios4">
+									A and B
+								  </label>
+								</div>
+							  </div>
+						</div>
+					</div>
+				  <div class="row" title="Question 3">
+					<div class="col-md-13 mb-3">
+					  <label title="Question 3" for="validationDefault03">Multiple transactions (two or more vehicles) by the same individual over
+					  a 24-hour period totaling $10,000 or more are considered</label>
+						  <div class="col-sm-13">
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios13" id="gridRadios43" value="option1">
+							  <label for="gridRadios1">
+								Wholesale transaction and not reportable
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios13" id="gridRadios44" value="option2">
+							  <label for="gridRadios2">
+								A single transaction and must be reported
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios13" id="gridRadios45" value="option3">
+							  <label for="gridRadios3">
+								Separate transactions and reporting is not required
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios13" id="gridRadio46" value="option4">
+							  <label for="gridRadios4">
+								Not to be a single transaction if there are co-owners
+							  </label>
+							</div>
+						  </div>
+					</div>
+				  </div>
+				  <div class="row" title="Question 4">
+					<div class="col-md-13 mb-3">
+					  <label title="Question 4" for="validationDefault04">How is an in-house warranty given</label>
+						   <div class="col-sm-13">
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios14" id="gridRadios47" value="option1">
+								  <label for="gridRadios1">
+									It must be noted in detail on the Buyer's Order
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios14" id="gridRadios48" value="option2">
+								  <label for="gridRadios2">
+									All terms and conditions are spelled out on the Buyer's Guide
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios14" id="gridRadios49" value="option3">
+								  <label for="gridRadios3">A separate document (other than the Buyer's Guide), containing 
+								  all federally required language must be given to the customer</label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="radio" name="gridRadios14" id="gridRadios50" value="option4">
+								  <label for="gridRadios4">
+									It must be transferable to a subsequent owner
+								  </label>
+								</div>
+						  </div>
+					</div>
+				  </div>
+				  <div class="row" title="Question 5">
+					<div class="col-md-13 mb-3">
+					  <label title="Question 5" for="validationDefault05">The dealer processing fee is</label>
+						  <div class="col-sm-13">
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios15" id="gridRadios51" value="option1">
+							  <label for="gridRadios1">
+								not subject to a tax
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios16" id="gridRadios52" value="option2">
+							  <label for="gridRadios2">
+								subject to the motor vehicle sales and use tax
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios17" id="gridRadios53" value="option3">
+							  <label for="gridRadios3">
+								collected and paid directly to the DMV
+							  </label>
+							</div>
+						  </div>
+					</div>
+				  </div>
+				  <br>
+				  <button title="Submit Button 3" class="btn btn-primary">Submit form</button>
+				  <br>
+				  </div>
+				</form>
+		   </div>
+            <!-- Navigation Bar ends -->
+           <div class="container-fluid">
+              <div class="row">
+                      <div class=" col-sm-offset-1 col-sm-10">
+                     </div>
+              </div>   <!--  row ends -->
+          </div>
+        </body>
+		<script src="./practice_exams.js"></script>
+</html>

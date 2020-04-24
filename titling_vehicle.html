@@ -1,0 +1,980 @@
+<html>
+      <head>
+              <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </head>
+        <body>
+            <!-- Navigation bar -->
+            <div id="pag-nav">
+              <nav class="navbar navbar-inverse">
+                   <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-sm-5">
+                         <ul class="nav navbar-nav">
+                           <li><a href="index.html">Home</a></li>
+                           <li><a href="mydmv.html">MyDMV Account</a></li>
+                           <li><a href="about.html">About</a></li>
+						   <li><a style="padding-top:5px;padding-bottom:5px;margin-top:25px;margin-left:3px;background-color:#ad920f;color:white" title="Logout Button" role="button" class="btn">Logout</a></li>
+                         </ul>
+                       </div>
+                      <div class="col-sm-4" style="text-align:center">
+                         <div class="navbar-header">
+                           <a class="navbar-brand" href="#">DMV of Virginia</a>
+                         </div>
+                       </div>
+					   <div class="col-sm-3" style="padding-left:5px">
+                         <ul class="nav navbar-nav">
+                           <li><a href="http://www.virginia.gov/">Virginia.gov</a></li>
+                           <li><a href="http://www.virginia.gov/government/state-employees/agency-directory">Agencies</a></li>
+                           <li><a href="http://www.governor.virginia.gov/">Governor</a></li>
+                         </ul>
+                       </div>
+                    </div>
+                   </div>
+               </nav>
+            </div>
+            <!-- Navigation Bar ends -->
+			<!-- Modal -->
+			<div id="myModal" class="modal">
+			  <div class="modal-content" style="text-align:center">
+				<h1>Information is being uploaded</h1>
+				<h1>Please Wait...</h1>
+			  </div>
+			</div>
+			<!-- Modal ends -->
+			<div class="container-fluid" style="background-color:lightgray;width:1700px">
+			 <form id="customForm">
+			  <div class="row" style="background-color:#fff">
+				  <h1 style="text-align:center;" >Titling a Vehicle in Virginia</h1>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+				<div class="col-md-5 mb-3">
+				  <h2>Full Owner Information</h2>
+				</div>
+			  </div>
+			  <div class="row" style="background-color:blue;color:white">
+				<div class="col-md-5 mb-3">
+				  <h3>Owner Information</h3>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">First Name</label>
+				  <input title="Owner First Name" type="text" class="form-control all" id="validationDefault01" placeholder="First Name" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Middle Name</label>
+				  <input title="Owner Middle Name" type="text" class="form-control all" id="validationDefault01" placeholder="Middle Name" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Last Name</label>
+				  <input title="Owner Last Name" type="text" class="form-control all" id="validationDefault01" placeholder="Last Name" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-xs-1">
+				  <label for="validationDefault01">Suffix</label>
+				  <input title="Owner Suffix" type="text" class="form-control all"  id="validationDefault01" placeholder="Suffix" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Suffix
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Resident Address</label>
+				  <input title="Owner Resident Street Address" type="text" class="form-control" id="validationDefault01" placeholder="Street Address" disabled>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault03">Resident City</label>
+				  <input title="Owner Resident City" type="text" class="form-control" id="validationDefault03" placeholder="City" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid City
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault04">Resident State</label>
+				  <input title="Owner Resident State" type="text" class="form-control" id="validationDefault04" placeholder="State" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid State
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault05">Resident Zip</label>
+				  <input title="Owner Resident Zip" type="text" class="form-control" id="validationDefault05" placeholder="Zip" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Zip Code must contain 5 numbers in the following format: XXXXX
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Mailing Address</label>
+				  <input title="Owner Mailing Street Address" type="text" class="form-control" id="validationDefault01" placeholder="Street Address" disabled>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault03">Mailing City</label>
+				  <input title="Owner Mailing City" type="text" class="form-control" id="validationDefault03" placeholder="City" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid City
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault04">Mailing State</label>
+				  <input title="Owner Mailing State" type="text" class="form-control" id="validationDefault04" placeholder="State" disabled>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault05">Mailing Zip</label>
+				  <input title="Owner Mailing Zip" type="text" class="form-control" id="validationDefault05" placeholder="Zip" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Zip Code must contain 5 numbers in the following format: XXXXX
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Driver License Number</label>
+				  <input title="Owner Driver License Number" type="text" class="form-control" id="validationDefault01" placeholder="Driver License Number" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      1Alpha+8-to-11Numeric or 9Numeric
+				  </div>
+				</div>
+			  </div>
+			  <div class="row" style="background-color:blue;color:white">
+				<div class="col-md-5 mb-3">
+				  <h3>Co-Owner Information (If Applicable)</h3>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">First Name</label>
+				  <input title="Co-Owner First Name" type="text" class="form-control all" id="validationDefault01" placeholder="First Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Middle Name</label>
+				  <input title="Co-Owner Middle Name" type="text" class="form-control all" id="validationDefault01" placeholder="Middle Name">
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Last Name</label>
+				  <input title="Co-Owner Last Name" type="text" class="form-control all" id="validationDefault01" placeholder="Last Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-xs-1">
+				  <label for="validationDefault01">Suffix</label>
+				  <input title="Co-Owner Suffix" type="text" class="form-control all"  id="validationDefault01" placeholder="Suffix" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Suffix
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Resident Address</label>
+				  <input title="Co-Owner Street Address" type="text" class="form-control" id="validationDefault01" placeholder="Street Address" required>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault03">Resident City</label>
+				  <input title="Co-Owner Resident City" type="text" class="form-control" id="validationDefault03" placeholder="City" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid City
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault04">Resident State</label>
+				  <input title="Co-Owner Resident State" type="text" class="form-control" id="validationDefault04" placeholder="State" >
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault05">Resident Zip</label>
+				  <input title="Co-Owner Resident Zip" type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Zip Code must contain 5 numbers in the following format: XXXXX
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Mailing Address</label>
+				  <input title="Co-Owner Mailing Street Address" type="text" class="form-control" id="validationDefault01" placeholder="Street Address" required>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault03">Mailing City</label>
+				  <input title="Co-Owner Mailing City" type="text" class="form-control" id="validationDefault03" placeholder="City" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid City
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault04">Mailing State</label>
+				  <input title="Co-Owner Mailing State" type="text" class="form-control" id="validationDefault04" placeholder="State" >
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault05">Mailing Zip</label>
+				  <input title="Co-Owner Mailing Zip" type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Zip Code must contain 5 numbers in the following format: XXXXX
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Driver License Number</label>
+				  <input title="Co-Owner Driver License Number" type="text" class="form-control" id="validationDefault01" placeholder="Driver License Number" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      1Alpha+8-to-11Numeric or 9Numeric
+				  </div>
+				</div>
+			  </div>
+			  <div class="row" style="background-color:blue;color:white">
+				<div class="col-md-7 mb-3">
+				  <h3>Supplemental Information</h3>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel1">Electronic Title Option (No Paper Issued)</label>
+				  <select title="Electronic Title Only" class="form-control" id="sel1">
+				    <option>(None)</option>
+					<option>Yes</option>
+					<option>No</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel2">Ownage Type</label>
+				  <select title="Ownage Type" class="form-control" id="sel2">
+					<option>(None)</option>
+					<option>Vehicle is owned by individual(s)</option>
+					<option>Vehicle is business owned</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel3">If this application is for joint ownership, do you wish clear rights of ownership to be transferred to
+					the surviving owner in the event of the death of either the owner or co-owner?</label>
+				  <select title="Transfer Ownership to Co-Owner after Death" class="form-control" id="sel3">
+					<option>(None)</option>
+					<option>Yes</option>
+					<option>No</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel5">Are any of the owners/lessees on active
+					military duty or service?</label>
+				  <select title="Owners in Military Service or Duty" class="form-control" id="sel5">
+					<option>(None)</option>
+					<option>Yes</option>
+					<option>No</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel4">Location Where Vehicle is Principally Garaged</label>
+				  <select title="Location Where Vehicle is Principally Garaged" class="form-control" id="sel4">
+					<option>(None)</option>
+					<option>City</option>
+					<option>County</option>
+					<option>Town</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-5 mb-3">
+				  <label for="validationDefault03">Location Where Garaged</label>
+				  <input title="Location Where Garaged" type="text" class="form-control" id="validationDefault03" placeholder="Location" required>
+				</div>
+				<div class="col-md-6 mb-3">
+				  <label for="validationDefault04">Residence/Business Jurisdiction</label>
+				  <input title="Residence/Business Jurisdiction" type="text" class="form-control" id="validationDefault04" placeholder="Jurisdiction">
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Registration Renewal Street Address</label>
+				  <input title="Registration Renewal Street Address" type="text" class="form-control" id="validationDefault01" placeholder="Street Address" required>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault03">Registration Renewal City</label>
+				  <input title="Registration Renewal City" type="text" class="form-control" id="validationDefault03" placeholder="City" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid City
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault04">Registration Renewal State</label>
+				  <input title="Registration Renewal State" type="text" class="form-control" id="validationDefault04" placeholder="State" >
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault05">Registration Renewal Zip</label>
+				  <input title="Registration Renewal Zip" type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Zip Code must contain 5 numbers in the following format: XXXXX
+				  </div>
+				</div>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+				<div class="col-md-5 mb-3">
+				  <h2>Vehicle Information</h2>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="validationDefault01">Vehicle Identification Number</label>
+				  <input title="Vehicle Identification Number" type="text" class="form-control" id="validationDefault01" placeholder="Vehicle Identification Number" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Number (Number with 17 digits)
+				  </div>
+				</div>
+				<div class="col-md-6 mb-3">
+				  <label for="validationDefault01">Plate/Decal/Metal Tag Number</label>
+				  <input title="Plate/Decal/Metal Tag Number" type="text" class="form-control" id="validationDefault01" placeholder="Plate/Decal/Metal Tag Number" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Number
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Make</label>
+				  <input title="Make" type="text" class="form-control all" id="validationDefault01" placeholder="Make" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Make
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Model</label>
+				  <input title="Model" type="text" class="form-control all" id="validationDefault01" placeholder="Model" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Model
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Model Year</label>
+				  <input title="Model Year" type="text" class="form-control all" id="validationDefault01" placeholder="Model Year" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Year
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Primary Color</label>
+				  <input title="Primary Color" type="text" class="form-control" id="validationDefault01" placeholder="Primary Color" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Color
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Division Code</label>
+				  <input title="Division Code" type="text" class="form-control" id="validationDefault01" placeholder="Division Code" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Number
+				  </div>
+				</div>
+				<div class="col-md-1 mb-3">
+				  <label for="validationDefault01">State</label>
+				  <input title="State" type="text" class="form-control" id="validationDefault01" placeholder="State" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid State
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="validationDefault01">Certificate of Title Number</label>
+				  <input title="Certificate of Title Number" type="text" class="form-control" id="validationDefault01" placeholder="Certificate of Title Number" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Number
+				  </div>
+				</div>
+				<div class="col-md-6 mb-3">
+				  <label for="validationDefault01">Previous Title Number</label>
+				  <input title="Previous Title Number" type="text" class="form-control" id="validationDefault01" placeholder="Previous Title Number" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Number
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="validationDefault01">Body Type</label>
+				  <input title="Body Type" type="text" class="form-control" id="validationDefault01" placeholder="Body Type" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Body Type
+				  </div>
+				</div>
+				<div class="col-md-6 mb-3">
+				  <label for="validationDefault01">Number of Axles</label>
+				  <input title="Number of Axles" type="text" class="form-control" id="validationDefault01" placeholder="Number of Axles" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Number of Axles
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-2 mb-3">
+				  <label for="validationDefault01">Empty Weight</label>
+				  <input title="Empty Weight" type="text" class="form-control" id="validationDefault01" placeholder="Empty Weight" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Weight
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">GVWR (single vehicle weight - manufacturer)</label>
+				  <input title="GVWR (single vehicle weight - manufacturer)" type="text" class="form-control" id="validationDefault01" placeholder="GVWR (single vehicle weight - manufacturer)" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid GVWR
+				  </div>
+				</div>
+				<div class="col-md-2 mb-2">
+				  <label for="validationDefault01">Gross Weight</label>
+				  <input title="Gross Weight" type="text" class="form-control" id="validationDefault01" placeholder="Gross Weight" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Weight
+				  </div>
+				</div>
+				<div class="col-md-4 mb-4">
+				  <label for="validationDefault01">GVWR (combined weight: truck + attached trailer)</label>
+				  <input title="GVWR (combined weight: truck + attached trailer)" type="text" class="form-control" id="validationDefault01" placeholder="GVWR (combined weight: truck + attached trailer)" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid GVWR
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel5">Is this Vehicle a low speed vehicle?</label>
+				  <select title="Is this Vehicle a low speed vehicle?" class="form-control" id="sel5">
+					<option>(None)</option>
+					<option>Yes</option>
+					<option>No</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel6">Is this a Logging vehicle?</label>
+				  <select title="Is this a Logging vehicle?" class="form-control" id="sel6">
+					<option>(None)</option>
+					<option>Yes</option>
+					<option>No</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel7">Fuel Type</label>
+				  <select title="Fuel Type" class="form-control" id="sel7">
+					<option>(None)</option>
+					<option>Gas</option>
+					<option>Electric</option>
+					<option>Diesel</option>
+					<option>Other</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel8">Is Vehicle State or Locality Owned</label>
+				  <select title="Is Vehicle State or Locality Owned" class="form-control" id="sel8">
+					<option>(None)</option>
+					<option>Yes</option>
+					<option>No</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+				<div class="col-md-8 mb-3">
+				  <h2>Lien Information (If Applicable)</h2>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">First Name</label>
+				  <input title="Lien First Name" type="text" class="form-control all" id="validationDefault01" placeholder="First Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Middle Name</label>
+				  <input title="Lien  Middle Name" type="text" class="form-control all" id="validationDefault01" placeholder="Middle Name">
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Last Name</label>
+				  <input title="Lien  Last Name" type="text" class="form-control all" id="validationDefault01" placeholder="Last Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-xs-1">
+				  <label for="validationDefault01">Suffix</label>
+				  <input title="Lien  Suffix" type="text" class="form-control all"  id="validationDefault01" placeholder="Suffix" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Suffix
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Resident Address</label>
+				  <input title="Lien Resident Street Address" type="text" class="form-control" id="validationDefault01" placeholder="Street Address" required>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault03">Resident City</label>
+				  <input title="Lien Resident City" type="text" class="form-control" id="validationDefault03" placeholder="City" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid City
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault04">Resident State</label>
+				  <input title="Lien Resident State" type="text" class="form-control" id="validationDefault04" placeholder="State" >
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault05">Resident Zip</label>
+				  <input title="Lien Resident Zip" type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Zip Code must contain 5 numbers in the following format: XXXXX
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault03">Date of First Lien</label>
+				  <input title="Date of First Lien" type="date" class="form-control" id="validationDefault03" placeholder="Date of First Lien" required>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault04">Lienholder Code</label>
+				  <input title="Lienholder Code" type="text" class="form-control" id="validationDefault04" placeholder="Lienholder Code" required>
+				</div>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+				<div class="col-md-8 mb-3">
+				  <h2>Source of Ownership Information</h2>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-2 mb-3">
+				  <label for="validationDefault01">Sale Price</label>
+				  <input title="Sale Price" type="text" class="form-control all" id="validationDefault01" placeholder="Sale Price" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Sales Price (X+.XX)
+				  </div>
+				</div>
+				<div class="col-md-2 mb-3">
+				  <label for="validationDefault01">Processing Fee</label>
+				  <input title="Processing Fee" type="text" class="form-control all" id="validationDefault01" placeholder="Processing Fee" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Processing Fee (X+.XX)
+				  </div>
+				</div>
+				<div class="col-md-2 mb-3">
+				  <label for="validationDefault01">Sales and Use Tax</label>
+				  <input title="Sales and Use Tax" type="text" class="form-control all" id="validationDefault01" placeholder="Sales and Use Tax" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Sales and Use Tax (X+.XX)
+				  </div>
+				</div>
+				<div class="col-md-2">
+				  <label for="validationDefault01">Vehicle Purchased From</label>
+				  <input title="Vehicle Purchased From" type="text" class="form-control all"  id="validationDefault01" placeholder="Vehicle Purchased From" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Vehicle Purchased From
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault03">Purchase Date</label>
+				  <input title="Purchase Date" type="date" class="form-control" id="validationDefault03" placeholder="Purchase Date" required>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault04">Rentor Number</label>
+				  <input title="Rentor Number" type="text" class="form-control" id="validationDefault04" placeholder="Rentor Number" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Number
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Resident Address</label>
+				  <input title="Source of Ownership Street Address" type="text" class="form-control" id="validationDefault01" placeholder="Street Address" required>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault03">Resident City</label>
+				  <input title="Source of Ownership City" type="text" class="form-control" id="validationDefault03" placeholder="City" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid City
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault04">Resident State</label>
+				  <input title="Source of Ownership State" type="text" class="form-control" id="validationDefault04" placeholder="State" >
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault05">Resident Zip</label>
+				  <input title="Source of Ownership Zip" type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Zip Code must contain 5 numbers in the following format: XXXXX
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel9">How was the vehicle sold to you</label>
+				  <select title="How was the vehicle sold to you" class="form-control" id="sel9">
+					<option>(None)</option>
+					<option>Used</option>
+					<option>New</option>
+					<option>Demonstrator</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+				<div class="col-md-8 mb-3">
+				  <h2>Lease Information (If Applicable)</h2>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">First Name</label>
+				  <input title="Lessee's First Name" type="text" class="form-control all" id="validationDefault01" placeholder="First Name" >
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Middle Name</label>
+				  <input title="Lessee's  Middle Name" type="text" class="form-control all" id="validationDefault01" placeholder="Middle Name">
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Last Name</label>
+				  <input title="Lessee's Last Name" type="text" class="form-control all" id="validationDefault01" placeholder="Last Name">
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-xs-1">
+				  <label for="validationDefault01">Suffix</label>
+				  <input title="Lessee's Suffix" type="text" class="form-control all"  id="validationDefault01" placeholder="Suffix">
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Suffix
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Resident Address</label>
+				  <input title="Lessee's Resident Street Address" type="text" class="form-control" id="validationDefault01" placeholder="Street Address">
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault03">Resident City</label>
+				  <input title="Lessee's Resident City" type="text" class="form-control" id="validationDefault03" placeholder="City">
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault04">Resident State</label>
+				  <input title="Lessee's Resident State" type="text" class="form-control" id="validationDefault04" placeholder="State" >
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault05">Resident Zip</label>
+				  <input title="Lessee's Resident Zip" type="text" class="form-control" id="validationDefault05" placeholder="Zip">
+				  <div class="field-invalid-feedback" style="display:none">
+				      Zip Code must contain 5 numbers in the following format: XXXXX
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Social Security Number</label>
+				  <input title="Lessee's Social Security Number" type="text" class="form-control" id="validationDefault01" placeholder="Social Security Number">
+				  <div class="field-invalid-feedback" style="display:none">
+				      Social Security number must be 7 number characters as follows (XXXXXXX)
+				  </div>
+				</div>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+				<div class="col-md-8 mb-3">
+				  <h2>Odometer Statement</h2>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Odometer Reading</label>
+				  <input title="Odometer Reading" type="text" class="form-control" id="validationDefault01" placeholder="Odometer Reading" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Number
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel9">About Odometer Statement</label>
+				  <select title="About Odometer Statement" class="form-control" id="sel9">
+					<option>(None)</option>
+					<option>The odometer reading above is the ACTUAL MILEAGE of the vehicle.</option>
+					<option>The odometer reading above is NOT the ACTUAL MILEAGE. (Odometer discrepancy.)</option>
+					<option>The odometer reading above is IN EXCESS of its mechanical limits.</option>
+					<option>The model year is at least 10 years or older than the current calendar year and was exempt from odometer disclosure in the prior state of title. </option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+				<div class="col-md-8 mb-3">
+				  <h2>Personal Property Tax Relief Eligibility</h2>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel9">Is more than 50% of the vehicle's annual mileage used as a business expense for federal income tax purposes OR reimbursed by an employer?</label>
+				  <select title="Is more than 50% of the vehicle's annual mileage used as a business expense for federal income tax purposes OR reimbursed by an employer?" class="form-control selectEligibleUseType" id="selectEligibleUseType">
+					<option>(None)</option>
+					<option>Yes</option>
+					<option>No</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel9">Is more than 50% of the depreciation associated with the vehicle deducted as a business expense for federal income tax purposes?</label>
+				  <select title="Is more than 50% of the depreciation associated with the vehicle deducted as a business expense for federal income tax purposes?" class="form-control selectEligibleUseType" id="selectEligibleUseType">
+					<option>(None)</option>
+					<option>Yes</option>
+					<option>No</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel9">Is the cost of the vehicle expensed pursuant to Section 179 of the Internal Revenue Service Code?</label>
+				  <select title="Is the cost of the vehicle expensed pursuant to Section 179 of the Internal Revenue Service Code?" class="form-control selectEligibleUseType" id="selectEligibleUseType">
+					<option>(None)</option>
+					<option>Yes</option>
+					<option>No</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel9">If the vehicle is leased by an individual, does the leasing company pay the tax without reimbursement from the individual? </label>
+				  <select title="If the vehicle is leased by an individual, does the leasing company pay the tax without reimbursement from the individual?" class="form-control selectEligibleUseType" id="selectEligibleUseType">
+					<option>(None)</option>
+					<option>Yes</option>
+					<option>No</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel9">Eligible Use Type</label>
+				  <select title="Eligible Use Type" class="form-control" id="sel9" disabled>
+					<option>Personal</option>
+					<option>Business</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+				<div class="col-md-8 mb-3">
+				  <h2>Registration Information</h2>
+				</div>
+			  </div>
+			  <div class="input-group row radioQuestion" title="Renew for">
+					<div class="col-md-12 mb-3">
+					  <label title="Renew for" for="validationDefault05">Renew for</label>
+						  <div class="col-sm-13">
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios1" value="1">
+							  <label for="gridRadios1">
+								1 year
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios2" value="1">
+							  <label for="gridRadios2">
+								2 year
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios3" value="1">
+							  <label for="gridRadios3">
+								3 year
+							  </label>
+							</div>
+						  </div>
+					</div>
+			  </div>
+			  <div class="row">
+				  <div class="col-md-6 mb-3">
+					  <label for="validationDefault01">Renewal Expiration Date</label>
+					  <input title="Renewal Expiration Date" type="date" class="form-control" id="validationDefault01" placeholder="Expiration Date" disabled>
+					  <div class="field-invalid-feedback" style="display:none">
+						  Format must be dd/mm/yyyy
+					  </div>
+				 </div>
+			  </div>
+			  <div class="input-group row radioQuestion" title="Insurance Certification">
+					<div class="col-md-12 mb-3">
+					  <label title="Insurance Certification" for="validationDefault05">Insurance Certification</label>
+						  <div class="col-sm-13">
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios4" value="option1">
+							  <label for="gridRadios1">
+								This vehicle is insured by a liability policy issued through an insurance company licensed to do business in Virginia and it will remain insured while registered, whether or not it is operated. 
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios5" value="option2">
+							  <label for="gridRadios2">
+								This vehicle is not insured; therefore, I am remitting the applicable uninsured motor vehicle fee. 
+							  </label>
+							</div>
+						  </div>
+					</div>
+			  </div>
+			  <div class="input-group row radioQuestion" title="Personal Property Tax Relief">
+					<div class="col-md-12 mb-3">
+					  <label title="Personal Property Tax Relief" for="validationDefault05">Personal Property Tax Relief</label>
+						  <div class="col-sm-13">
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios6" value="option1">
+							  <label for="gridRadios1">
+								Personal Use
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios7" value="option2">
+							  <label for="gridRadios2">
+								Business Use
+							  </label>
+							</div>
+						  </div>
+					</div>
+			  </div>
+			  <div class="input-group row radioQuestion" title="Registration Type">
+					<div class="col-md-12 mb-3">
+					  <label title="Registration Type" for="validationDefault05">Registration Type</label>
+						  <div class="col-sm-13">
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios8" value="option1">
+							  <label for="gridRadios1">
+								Private
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios9" value="option2">
+							  <label for="gridRadios2">
+								Rental
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios10" value="option3">
+							  <label for="gridRadios1">
+								Trailer Permanent Regular Size Plate
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios11" value="option4">
+							  <label for="gridRadios2">
+								Trailer Permanent Small Size Plate
+							  </label>
+							</div>
+						  </div>
+					</div>
+			  </div>
+			  <!--div class="row" style="background-color:green;color:white">
+				<div class="col-md-8 mb-3">
+				  <h2>Proof of Address</h2>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="sel9">Proof of Address Document</label>
+				  <select title="Proof of Address Document" class="form-control" id="sel9" required>
+					<option>(None)</option>
+					<option>Payroll check stub issued by an employer within the last two months</option>
+					<option>U.S. Internal Revenue Service tax reporting W-2 form or 1099 form (not more than 18 months old)</option>
+					<option>U.S. or Virginia income tax return from the previous year.</option>
+					<option>Original monthly bank statement not more than two months old issued by a bank</option>
+					<option>Annual Social Security statement for the current or preceding calendar year</option>
+					<option>Utility bill, not more than two months old, issued to the applicant examples 
+					include gas, electric, sewer, water, cable, phone or cellphone bill).</option>
+					<option>Receipt for personal property taxes or real estate taxes paid within the last year</option>
+					<option>Current automobile or life insurance bill (cards or policies are not accepted)</option>
+					<option>Certified copy of school records/transcript or official report card issued 
+					within the last year by a school accredited by a U.S. state, jurisdiction or territory</option>
+					<option>Voter registration card</option>
+					<option>Driver’s license, learner’s permit or DMV-issued photo ID cards</option>
+					displaying the applicant’s current address
+					<option>Current homeowners insurance policy or bill</option>
+					<option>Cancelled check (not more than two months old) with both name and address imprinted</option>
+					<option>Deed, mortgage, monthly mortgage statement, or residential rental/lease agreement</option>
+					<option>U.S. Postal Service change of address confirmation form or postmarked U.S. mail 
+					with forwarding address label (must display the applicant’s full name)</option>
+				  </select>
+				</div>
+			  </div-->
+			  <br>
+			  <button title="Submit Button" class="btn btn-primary">Submit form</button>
+			 </form>
+		   </div>
+		   <br>
+		   <br>
+		   <br>
+           <div class="container-fluid">
+              <div class="row">
+                      <div class=" col-sm-offset-1 col-sm-10">
+                     </div>
+              </div>   <!--  row ends -->
+          </div>
+        </body>
+		<script src="./titling_vehicle.js"></script>
+</html>

@@ -1,0 +1,276 @@
+<html>
+      <head>
+              <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </head>
+        <body>
+            <!-- Navigation bar -->
+            <div id="pag-nav">
+              <nav class="navbar navbar-inverse">
+                   <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-sm-5">
+                         <ul class="nav navbar-nav">
+                           <li><a href="index.html">Home</a></li>
+                           <li><a href="mydmv.html">MyDMV Account</a></li>
+                           <li><a href="about.html">About</a></li>
+						   <li><a style="padding-top:5px;padding-bottom:5px;margin-top:25px;margin-left:3px;background-color:#ad920f;color:white" title="Logout Button" role="button" class="btn">Logout</a></li>
+                         </ul>
+                       </div>
+                      <div class="col-sm-4" style="text-align:center">
+                         <div class="navbar-header">
+                           <a class="navbar-brand" href="#">DMV of Virginia</a>
+                         </div>
+                       </div>
+					   <div class="col-sm-3" style="padding-left:5px">
+                         <ul class="nav navbar-nav">
+                           <li><a href="http://www.virginia.gov/">Virginia.gov</a></li>
+                           <li><a href="http://www.virginia.gov/government/state-employees/agency-directory">Agencies</a></li>
+                           <li><a href="http://www.governor.virginia.gov/">Governor</a></li>
+                         </ul>
+                       </div>
+                    </div>
+                   </div>
+               </nav>
+            </div>
+            <!-- Navigation Bar ends -->
+			<!-- Modal -->
+			<div id="myModal" class="modal">
+			  <div class="modal-content" style="text-align:center">
+				<h1>Information is being uploaded</h1>
+				<h1>Please Wait...</h1>
+			  </div>
+			</div>
+			<!-- Modal ends -->
+			<div class="container-fluid" style="background-color:lightgray;width:800px">
+			 <form id="customForm">
+			  <div class="row" style="background-color:#fff">
+				  <h1 style="text-align:center;" >Report a Vehicle sold or Traded</h1>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+				<div class="col-md-5 mb-3">
+				  <h2>Vehicle Information</h2>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="validationDefault01">Vehicle Identification Number</label>
+				  <input title="Vehicle Identification Number" type="text" class="form-control" id="validationDefault01" placeholder="Vehicle Identification Number" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Number
+				  </div>
+				</div>
+				<div class="col-md-6 mb-3">
+				  <label for="validationDefault01">Plate/Decal/Metal Tag Number</label>
+				  <input title="Plate/Decal/Metal Tag Number" type="text" class="form-control" id="validationDefault01" placeholder="Plate/Decal/Metal Tag Number" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Number
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Make</label>
+				  <input title="Make" type="text" class="form-control all" id="validationDefault01" placeholder="Make" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Make
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Model</label>
+				  <input title="Model" type="text" class="form-control all" id="validationDefault01" placeholder="Model" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Model
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Model Year</label>
+				  <input title="Model Year" type="text" class="form-control all" id="validationDefault01" placeholder="Model Year" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Year
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-6 mb-3">
+				  <label for="validationDefault01">Certificate of Title Number</label>
+				  <input title="Certificate of Title Number" type="text" class="form-control" id="validationDefault01" placeholder="Certificate of Title Number" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Number
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Date Vehicle Sold</label>
+				  <input title="Date Vehicle Sold" type="date" class="form-control" id="validationDefault01" placeholder="Date Vehicle Sold" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Date
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-8 mb-3">
+				  <label for="validationDefault01">Sale Price (Enter 0.0 if gift or inheritance)</label>
+				  <input title="Sale Price" type="text" class="form-control" id="validationDefault01" placeholder="Sale Price" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Sale Price ex. (X+.XX)
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Today's Date</label>
+				  <input title="Today Date" type="date" class="form-control" id="validationDefault01" placeholder="Today's Date" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Date
+				  </div>
+				</div>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+				<div class="col-md-5 mb-3">
+				  <h2>Seller Information</h2>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">First Name</label>
+				  <input title="Seller First Name" type="text" class="form-control all" id="validationDefault01" placeholder="First Name" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Middle Name</label>
+				  <input title="Seller Middle Name" type="text" class="form-control all" id="validationDefault01" placeholder="Middle Name" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Last Name</label>
+				  <input title="Seller Last Name" type="text" class="form-control all" id="validationDefault01" placeholder="Last Name" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-xs-1">
+				  <label for="validationDefault01">Suffix</label>
+				  <input title="Seller Suffix" type="text" class="form-control all"  id="validationDefault01" placeholder="Suffix" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Suffix
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Street Address</label>
+				  <input title="Seller Resident Street Address" type="text" class="form-control" id="validationDefault01" placeholder="Street Address" disabled>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault03">City</label>
+				  <input title="Seller Resident City" type="text" class="form-control" id="validationDefault03" placeholder="City" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid City
+				  </div>
+				</div>
+				<div class="col-md-2 mb-3">
+				  <label for="validationDefault04">State</label>
+				  <input title="Seller Resident State" type="text" class="form-control" id="validationDefault04" placeholder="State" value="VA" disabled>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault05">Zip</label>
+				  <input title="Seller Resident Zip" type="text" class="form-control" id="validationDefault05" placeholder="Zip" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Zip Code must contain 5 numbers in the following format: XXXXX
+				  </div>
+				</div>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+				<div class="col-md-5 mb-3">
+				  <h2>Buyer Information</h2>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">First Name</label>
+				  <input title="Buyer First Name" type="text" class="form-control all" id="validationDefault01" placeholder="First Name" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Middle Name</label>
+				  <input title="Buyer Middle Name" type="text" class="form-control all" id="validationDefault01" placeholder="Middle Name" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Last Name</label>
+				  <input title="Buyer Last Name" type="text" class="form-control all" id="validationDefault01" placeholder="Last Name" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-xs-1">
+				  <label for="validationDefault01">Suffix</label>
+				  <input title="Buyer Suffix" type="text" class="form-control all"  id="validationDefault01" placeholder="Suffix" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Suffix
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Driver License</label>
+				  <input title="Buyer Driver License" type="text" class="form-control" id="validationDefault01" placeholder="Driver License" disabled>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Street Address</label>
+				  <input title="Buyer Resident Street Address" type="text" class="form-control" id="validationDefault01" placeholder="Street Address" disabled>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault03">City</label>
+				  <input title="Buyer Resident City" type="text" class="form-control" id="validationDefault03" placeholder="City" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid City
+				  </div>
+				</div>
+				<div class="col-md-2 mb-3">
+				  <label for="validationDefault04">State</label>
+				  <input title="Buyer Resident State" type="text" class="form-control" id="validationDefault04" placeholder="State" value="VA" disabled>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault05">Zip</label>
+				  <input title="Buyer Resident Zip" type="text" class="form-control" id="validationDefault05" placeholder="Zip" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Zip Code must contain 5 numbers in the following format: XXXXX
+				  </div>
+				</div>
+			  </div>
+			  <br>
+			  <button title="Submit Button" class="btn btn-primary">Submit form</button>
+			 </form>
+		    </div>
+			<br>
+			<br>
+			<br>
+           <div class="container-fluid">
+              <div class="row">
+                      <div class=" col-sm-offset-1 col-sm-10">
+                     </div>
+              </div>   <!--  row ends -->
+          </div>
+        </body>
+		<script src="./report_vehicle.js"></script>
+</html>

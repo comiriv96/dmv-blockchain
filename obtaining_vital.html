@@ -1,0 +1,1032 @@
+<html>
+      <head>
+              <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </head>
+        <body>
+            <!-- Navigation bar -->
+            <div id="pag-nav">
+              <nav class="navbar navbar-inverse">
+                   <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-sm-5">
+                         <ul class="nav navbar-nav">
+                           <li><a href="index.html">Home</a></li>
+                           <li><a href="mydmv.html">MyDMV Account</a></li>
+                           <li><a href="about.html">About</a></li>
+						   <li><a style="padding-top:5px;padding-bottom:5px;margin-top:25px;margin-left:3px;background-color:#ad920f;color:white" title="Logout Button" role="button" class="btn">Logout</a></li>
+                         </ul>
+                       </div>
+                      <div class="col-sm-4" style="text-align:center">
+                         <div class="navbar-header">
+                           <a class="navbar-brand" href="#">DMV of Virginia</a>
+                         </div>
+                       </div>
+					   <div class="col-sm-3" style="padding-left:5px">
+                         <ul class="nav navbar-nav">
+                           <li><a href="http://www.virginia.gov/">Virginia.gov</a></li>
+                           <li><a href="http://www.virginia.gov/government/state-employees/agency-directory">Agencies</a></li>
+                           <li><a href="http://www.governor.virginia.gov/">Governor</a></li>
+                         </ul>
+                       </div>
+                    </div>
+                   </div>
+               </nav>
+            </div>
+            <!-- Navigation Bar ends -->
+			<!-- Modal -->
+			<div id="myModal" class="modal">
+			  <div class="modal-content" style="text-align:center">
+				<h1>Information is being uploaded</h1>
+				<h1>Please Wait...</h1>
+			  </div>
+			</div>
+			<!-- Modal ends -->
+			<div class="container-fluid" style="background-color:lightgray;width:1300px">
+			 <form id="customForm">
+			  <div class="row" style="background-color:#fff">
+				  <h1 style="text-align:center;" >Request for Vital Record</h1>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+				<div class="col-md-5 mb-3">
+				  <h2>Requester Info</h2>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">First Name</label>
+				  <input title="Requestor First Name" type="text" class="form-control all" id="validationDefault01" placeholder="First Name" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Middle Name</label>
+				  <input title="Requestor Middle Name" type="text" class="form-control all" id="validationDefault01" placeholder="Middle Name" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Last Name</label>
+				  <input title="Requestor Last Name" type="text" class="form-control all" id="validationDefault01" placeholder="Last Name" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-xs-1">
+				  <label for="validationDefault01">Suffix</label>
+				  <input title="Requestor Suffix" type="text" class="form-control all"  id="validationDefault01" placeholder="Suffix" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Suffix
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Street Address</label>
+				  <input title="Resident Street Address" type="text" class="form-control all"  id="validationDefault01" placeholder="Street Address" disabled>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault03">City</label>
+				  <input title="Resident City" type="text" class="form-control all"  id="validationDefault03" placeholder="City" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid City
+				  </div>
+				</div>
+				<div class="col-md-2 mb-3">
+				  <label for="validationDefault04">State</label>
+				  <input title="Resident State" type="text" class="form-control all"  id="validationDefault04" placeholder="State" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid State
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault05">Zip</label>
+				  <input title="Resident Zip" type="text" class="form-control all"  id="validationDefault05" placeholder="Zip" disabled>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Zip Code must contain 5 numbers in the following format: XXXXX
+				  </div>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Number of Copies Requested</label>
+				  <input title="Number of Copies Requested" type="text" class="form-control all" id="validationDefault01" placeholder="Number of Copies Requested" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Number of Copies
+				  </div>
+				</div>
+			  </div>
+			  <div class="input-group row radioQuestion all" title="Type of Certificate">
+				<div class="col-md-12 mb-3">
+				  <label title="Type of Certificate" for="validationDefault01">Type of Certificate.</label>
+					  <div class="col-sm-13">
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios1" value="birth">
+						  <label for="gridRadios1">
+							Birth
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios2" value="death">
+						  <label for="gridRadios2">
+							Death
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios3" value="marriage">
+						  <label for="gridRadios3">
+							Marriage
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios4" value="divorce">
+						  <label for="gridRadios4">
+							Divorce
+						  </label>
+						</div>
+					  </div>
+				</div>
+			  </div>
+			  <div class="input-group row radioQuestion all" title="Requester Relationship to Person">
+				<div class="col-md-12 mb-3">
+				  <label title="Requester Relationship to Person" for="validationDefault01">RELATIONSHIP OF REQUESTER TO PERSON NAMED ON THE CERTIFICATE.</label>
+					  <div class="col-sm-13">
+						<div class="form-check all">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios5" value="birth">
+						  <label for="gridRadios1">
+							Self
+						  </label>
+						</div>
+						<div class="form-check all">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios6" value="death">
+						  <label for="gridRadios2">
+							Mother
+						  </label>
+						</div>
+						<div class="form-check all">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios7" value="marriage">
+						  <label for="gridRadios3">
+							Father
+						  </label>
+						</div>
+						<div class="form-check all">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios8" value="divorce">
+						  <label for="gridRadios4">
+							Child
+						  </label>
+						</div>
+						<div class="form-check all">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios9" value="birth">
+						  <label for="gridRadios1">
+							Sister
+						  </label>
+						</div>
+						<div class="form-check all">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios10" value="death">
+						  <label for="gridRadios2">
+							Brother
+						  </label>
+						</div>
+						<div class="form-check all">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios11" value="marriage">
+						  <label for="gridRadios3">
+							Current Spouse
+						  </label>
+						</div>
+						<div class="form-check death">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios12" value="divorce">
+						  <label for="gridRadios4">
+							Grandchild (death certificate only)
+						  </label>
+						</div>
+						<div class="form-check death">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios13" value="birth">
+						  <label for="gridRadios1">
+							Great Grandchild (death certificate only)
+						  </label>
+						</div>
+						<div class="form-check all">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios14" value="death">
+						  <label for="gridRadios2">
+							Legal Representative
+						  </label>
+						</div>
+						<div class="form-check birth">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios15" value="marriage">
+						  <label for="gridRadios3">
+							Maternal Grandparent
+						  </label>
+						</div>
+						<div class="form-check birth">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios16" value="marriage">
+						  <label for="gridRadios3">
+							Paternal Grandparent
+						  </label>
+						</div>
+						<div class="form-check marrige divorce death">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios17" value="marriage">
+						  <label for="gridRadios3">
+							Executor (approved papers required)
+						  </label>
+						</div>
+						<div class="form-check all">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios18" value="divorce">
+						  <label for="gridRadios4">
+							Non Relative (Public Record Request Only)
+						  </label>
+						</div>
+						<div class="form-check all">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios19" value="death">
+						  <label for="gridRadios2">
+							Non Immediate Family (Public Record Request Only)
+						  </label>
+						</div>
+						<div class="form-check all">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios20" value="marriage">
+						  <label for="gridRadios3">
+							Legal Guardian (approved papers Required)
+						  </label>
+						</div>
+						<div class="form-check death">
+						  <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios21" value="divorce">
+						  <label for="gridRadios4">
+							Funeral Director (death certificate only)
+						  </label>
+						</div>
+					  </div>
+				</div>
+			  </div>
+			  <div class="input-group radioQuestion all" title="Reason for Request">
+				<div class="col-md-12 mb-3">
+				  <label title="Reason for Request" for="validationDefault01">REASON FOR REQUESTING</label>
+					  <div class="col-sm-13">
+						<div class="form-check birth">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios22" value="birth">
+						  <label for="gridRadios1">
+							Retirement
+						  </label>
+						</div>
+						<div class="form-check birth">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios23" value="death">
+						  <label for="gridRadios2">
+							School: Pre-K to 12
+						  </label>
+						</div>
+						<div class="form-check birth">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios24" value="marriage">
+						  <label for="gridRadios3">
+							Travel
+						  </label>
+						</div>
+						<div class="form-check all">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios25" value="divorce">
+						  <label for="gridRadios4">
+							Passport
+						  </label>
+						</div>
+						<div class="form-check birth">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios26" value="birth">
+						  <label for="gridRadios1">
+							Employment
+						  </label>
+						</div>
+						<div class="form-check birth">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios27" value="death">
+						  <label for="gridRadios2">
+							Housing
+						  </label>
+						</div>
+						<div class="form-check birth">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios28" value="marriage">
+						  <label for="gridRadios3">
+							Insurance
+						  </label>
+						</div>
+						<div class="form-check birth">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios29" value="divorce">
+						  <label for="gridRadios4">
+							DMV License or ID card
+						  </label>
+						</div>
+						<div class="form-check all">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios30" value="birth">
+						  <label for="gridRadios1">
+							Veteran Benefits Only
+						  </label>
+						</div>
+						<div class="form-check all">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios31" value="death">
+						  <label for="gridRadios2">
+							Public Record Request (records at least 100 years old)
+						  </label>
+						</div>
+						<div class="form-check marriage divorce death">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios32" value="death">
+						  <label for="gridRadios2">
+							Life Insurance Purposes
+						  </label>
+						</div>
+						<div class="form-check marriage divorce death">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios33" value="death">
+						  <label for="gridRadios2">
+							Estate Settlements
+						  </label>
+						</div>
+						<div class="form-check marriage divorce death">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios34" value="death">
+						  <label for="gridRadios2">
+							To Close an Account (Bank/Utilities)
+						  </label>
+						</div>
+						<div class="form-check marriage divorce death">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios35" value="death">
+						  <label for="gridRadios2">
+							Transfer Property (Car/Real Estate)
+						  </label>
+						</div>
+						<div class="form-check marriage divorce death">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios36" value="death">
+						  <label for="gridRadios2">
+							Medical Reasons (Medical History)
+						  </label>
+						</div>
+						<div class="form-check marriage divorce death">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios37" value="death">
+						  <label for="gridRadios2">
+							Social Security Benefits
+						  </label>
+						</div>
+						<div class="form-check all">
+						  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios38" value="marriage">
+						  <label for="gridRadios3">
+							Other (specify)
+						  </label>
+						</div>
+					  </div>
+				</div>
+			  </div>
+			  <div class="row marriage" style="background-color:green;color:white">
+				<div class="col-md-5 mb-3">
+				  <h2>Marriage Info</h2>
+				</div>
+			  </div>
+			  <div class="row divorce" style="background-color:green;color:white">
+				<div class="col-md-5 mb-3">
+				  <h2>Divorce Info</h2>
+				</div>
+			  </div>
+			  <div class="row marriage divorce" style="background-color:blue;color:white">
+				<div class="col-md-5 mb-3">
+				  <h3>Partner 1 Info</h3>
+				</div>
+			  </div>
+			  <div class="input-group row radioQuestion marriage divorce" title="Partner 1 Type">
+				<div class="col-md-12 mb-3">
+				  <label title="Partner 1 Type" for="validationDefault01">Partner Type</label>
+					  <div class="col-md-13">
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios39" value="birth">
+						  <label for="gridRadios1">
+							Groom
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios40" value="death">
+						  <label for="gridRadios2">
+							Bride
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios41" value="marriage">
+						  <label for="gridRadios3">
+							Spouse
+						  </label>
+						</div>
+					  </div>
+				</div>
+			  </div>
+			  <div class="row marriage divorce">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">First Name</label>
+				  <input title="First Name Partner 1" type="text" class="form-control marriage divorce" id="validationDefault01" placeholder="First Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Middle Name</label>
+				  <input title="Middle Name Partner 1" type="text" class="form-control marriage divorce" id="validationDefault01" placeholder="Middle Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Last Name</label>
+				  <input title="Last Name Partner 1" type="text" class="form-control marriage divorce" id="validationDefault01" placeholder="Last Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-xs-1">
+				  <label for="validationDefault01">Suffix</label>
+				  <input title="Suffix Partner 1" type="text" class="form-control marriage divorce" id="validationDefault01" placeholder="Suffix" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Suffix
+				  </div>
+				</div>
+			  </div>
+			  <div class="row marriage divorce">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Maiden Name</label>
+				  <input title="Maiden Name Partner 1" type="text" class="form-control marriage divorce" id="validationDefault01" placeholder="Maiden Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-1 mb-1">
+				  <label for="validationDefault01">Sex</label>
+				  <input title="Sex Partner 1" type="text" class="form-control marriage divorce" id="validationDefault01" placeholder="M or F" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Sex
+				  </div>
+				</div>
+			  </div>
+			  <div class="row marriage divorce" style="background-color:blue;color:white">
+				<div class="col-md-5 mb-3">
+				  <h3>Partner 2 Info</h3>
+				</div>
+			  </div>
+			  <div class="input-group row radioQuestion marriage divorce" title="Partner 2 Type">
+				<div class="col-md-12 mb-3">
+				  <label title="Partner 2 Type" for="validationDefault01">Partner Type</label>
+					  <div class="col-md-13">
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="gridRadios5" id="gridRadios42" value="birth">
+						  <label for="gridRadios1">
+							Groom
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="gridRadios5" id="gridRadios43" value="death">
+						  <label for="gridRadios2">
+							Bride
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="gridRadios5" id="gridRadios44" value="marriage">
+						  <label for="gridRadios3">
+							Spouse
+						  </label>
+						</div>
+					  </div>
+				</div>
+			  </div>
+			  <div class="row marriage divorce">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">First Name</label>
+				  <input title="First Name Partner 2" type="text" class="form-control marriage divorce" id="validationDefault01" placeholder="First Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Middle Name</label>
+				  <input title="Middle Name Partner 2" type="text" class="form-control marriage divorce" id="validationDefault01" placeholder="Middle Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Last Name</label>
+				  <input title="Last Name Partner 2" type="text" class="form-control marriage divorce" id="validationDefault01" placeholder="Last Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-xs-1">
+				  <label for="validationDefault01">Suffix</label>
+				  <input title="Suffix Partner 2" type="text" class="form-control marriage divorce" id="validationDefault01" placeholder="Suffix" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Suffix
+				  </div>
+				</div>
+			  </div>
+			  <div class="row marriage divorce">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Maiden Name</label>
+				  <input title="Maiden Name Partner 2" type="text" class="form-control marriage divorce" id="validationDefault01" placeholder="Maiden Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-1 mb-1">
+				  <label for="validationDefault01">Sex</label>
+				  <input title="Sex Partner 2" type="text" class="form-control marriage divorce" id="validationDefault01" placeholder="M or F" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Sex
+				  </div>
+				</div>
+			  </div>
+			  <div class="row marriage" style="background-color:blue;color:white">
+				<div class="col-md-5 mb-3">
+				  <h3>Marriage Info</h3>
+				</div>
+			  </div>
+			  <div class="row marriage">
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Marriage Date</label>
+				  <input title="Marriage Date" type="date" class="form-control marriage" id="validationDefault01" placeholder="First Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Date
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Marriage Location</label>
+				  <input title="Marriage Location" type="text" class="form-control marriage" id="validationDefault01" placeholder="Virginia City or County" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Place
+				  </div>
+				</div>
+				<div class="col-md-4">
+				  <label for="validationDefault01">License Issue Place</label>
+				  <input title="License Issue Place" type="text" class="form-control marriage" id="validationDefault01" placeholder="License Issue Place" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid License Issue
+				  </div>
+				</div>
+			  </div>
+			  <div class="row divorce" style="background-color:blue;color:white">
+				<div class="col-md-5 mb-3">
+				  <h3>Divorce Info</h3>
+				</div>
+			  </div>
+			  <div class="row divorce">
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Divorce Date</label>
+				  <input title="Divorce Date" type="date" class="form-control divorce" id="validationDefault01" placeholder="First Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Date
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Divorce Location</label>
+				  <input title="Divorce Location" type="text" class="form-control divorce" id="validationDefault01" placeholder="Virginia City or County" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Place
+				  </div>
+				</div>
+				<div class="col-md-4">
+				  <label for="validationDefault01">License Issue Place</label>
+				  <input title="License Issue Place" type="text" class="form-control divorce" id="validationDefault01" placeholder="License Issue Place" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid License Issue Place
+				  </div>
+				</div>
+			  </div>
+			  <div class="row birth" style="background-color:green;color:white">
+				<div class="col-md-5 mb-3">
+				  <h2>Birth Certificate Info</h2>
+				</div>
+			  </div>
+			  <div class="row birth" style="background-color:blue;color:white">
+				<div class="col-md-5 mb-3">
+				  <h3>Name at Birth</h3>
+				</div>
+			  </div>
+			  <div class="row birth">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">First Name</label>
+				  <input title="First Name At Birth" type="text" class="form-control birth" id="validationDefault01" placeholder="First Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Middle Name</label>
+				  <input title="Middle Name At Birth" type="text" class="form-control birth" id="validationDefault01" placeholder="Middle Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Last Name</label>
+				  <input title="Last Name At Birth" type="text" class="form-control birth" id="validationDefault01" placeholder="Last Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-xs-1">
+				  <label for="validationDefault01">Suffix</label>
+				  <input title="Suffix At Birth" type="text" class="form-control birth" id="validationDefault01" placeholder="Suffix" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Suffix
+				  </div>
+				</div>
+			  </div>
+			  <div class="row birth" style="background-color:blue;color:white">
+				<div class="col-md-5 mb-3">
+				  <h3>Name Changed To (If Applicable)</h3>
+				</div>
+			  </div>
+			  <div class="row birth">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">First Name</label>
+				  <input title="First Name Changed To" type="text" class="form-control birth" id="validationDefault01" placeholder="First Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Middle Name</label>
+				  <input title="Middle Name Changed To" type="text" class="form-control birth" id="validationDefault01" placeholder="Middle Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Last Name</label>
+				  <input title="Last Name Changed To" type="text" class="form-control birth" id="validationDefault01" placeholder="Last Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-xs-1">
+				  <label for="validationDefault01">Suffix</label>
+				  <input title="Suffix Changed To" type="text" class="form-control birth" id="validationDefault01" placeholder="Suffix" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Suffix
+				  </div>
+				</div>
+			  </div>
+			  <div class="row birth" style="background-color:blue;color:white">
+				<div class="col-md-5 mb-3">
+				  <h3>Birth Info</h3>
+				</div>
+			  </div>
+			  <div class="row birth">
+				<div class="col-md-2 mb-3">
+				  <label for="validationDefault01">Birth Date</label>
+				  <input title="Birth Date" type="date" class="form-control birth" id="validationDefault01" placeholder="Birth Date" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Date
+				  </div>
+				</div>
+				<div class="col-md-2 mb-3">
+				  <label for="validationDefault01">Birth Sex</label>
+				  <input title="Birth Sex" type="text" class="form-control birth" id="validationDefault01" placeholder="M or F" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Sex
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Birth Place</label>
+				  <input title="Birth Place" type="text" class="form-control birth" id="validationDefault01" placeholder="Virginia City or County" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Place
+				  </div>
+				</div>
+				<div class="col-md-4">
+				  <label for="validationDefault01">Birth Hospital (Optional) </label>
+				  <input title="Birth Hospital" type="text" class="form-control birth" id="validationDefault01" placeholder="Hospital Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Hospital
+				  </div>
+				</div>
+			  </div>
+			  <div class="row birth" style="background-color:blue;color:white">
+				<div class="col-md-5 mb-3">
+				  <h3>Mother Full Maiden Name</h3>
+				</div>
+			  </div>
+			  <div class="row birth">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">First Name</label>
+				  <input title="First Name Mother" type="text" class="form-control birth" id="validationDefault01" placeholder="First Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Middle Name</label>
+				  <input title="Middle Name Mother" type="text" class="form-control birth" id="validationDefault01" placeholder="Middle Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Last Name</label>
+				  <input title="Last Name Mother" type="text" class="form-control birth" id="validationDefault01" placeholder="Last Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-xs-1">
+				  <label for="validationDefault01">Suffix</label>
+				  <input title="Suffix Mother" type="text" class="form-control birth" id="validationDefault01" placeholder="Suffix" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Suffix
+				  </div>
+				</div>
+			  </div>
+			  <div class="row birth" style="background-color:blue;color:white">
+				<div class="col-md-5 mb-3">
+				  <h3>Father Full Name</h3>
+				</div>
+			  </div>
+			  <div class="row birth">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">First Name</label>
+				  <input title="First Name Father" type="text" class="form-control birth" id="validationDefault01" placeholder="First Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Middle Name</label>
+				  <input title="Middle Name Father" type="text" class="form-control birth" id="validationDefault01" placeholder="Middle Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Last Name</label>
+				  <input title="Last Name Father" type="text" class="form-control birth" id="validationDefault01" placeholder="Last Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-xs-1">
+				  <label for="validationDefault01">Suffix</label>
+				  <input title="Suffix Father" type="text" class="form-control birth" id="validationDefault01" placeholder="Suffix" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Suffix
+				  </div>
+				</div>
+			  </div>
+			  <div class="row death" style="background-color:green;color:white">
+				<div class="col-md-5 mb-3">
+				  <h2>Death Info</h2>
+				</div>
+			  </div>
+			  <div class="row death" style="background-color:blue;color:white">
+				<div class="col-md-5 mb-3">
+				  <h3>Deceased Info</h3>
+				</div>
+			  </div>
+			  <div class="row death">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">First Name</label>
+				  <input title="First Name Deceased" type="text" class="form-control death" id="validationDefault01" placeholder="First Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Middle Name</label>
+				  <input title="Middle Name Deceased" type="text" class="form-control death" id="validationDefault01" placeholder="Middle Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Last Name</label>
+				  <input title="Last Name Deceased" type="text" class="form-control death" id="validationDefault01" placeholder="Last Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-xs-1">
+				  <label for="validationDefault01">Suffix</label>
+				  <input title="Suffix Deceased" type="text" class="form-control death" id="validationDefault01" placeholder="Suffix" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Suffix
+				  </div>
+				</div>
+			  </div>
+			  <div class="row death">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Date of Death</label>
+				  <input title="Deceased Date of Death" type="date" class="form-control death" id="validationDefault01" placeholder="Date of Death" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Age at Death</label>
+				  <input title="Deceased Age at Death" type="text" class="form-control death" id="validationDefault01" placeholder="Age at Death" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Age
+				  </div>
+				</div>
+			  </div>
+			  <div class="row death">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Race of Deceased</label>
+				  <input title="Deceased Race" type="text" class="form-control death" id="validationDefault01" placeholder="Race" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Race
+				  </div>
+				</div>
+				<div class="col-md-1 mb-1">
+				  <label for="validationDefault01">Sex</label>
+				  <input title="Deceased Sex" type="text" class="form-control death" id="validationDefault01" placeholder="M or F" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Sex
+				  </div>
+				</div>
+			  </div>
+			  <div class="row death">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Death Location</label>
+				  <input title="Deceased Death Location" type="text" class="form-control death" id="validationDefault01" placeholder="Virginia city or county" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Location
+				  </div>
+				</div>
+				<div class="col-md-4 mb-4">
+				  <label for="validationDefault01">Hospital Name (If Appropriate)</label>
+				  <input title="Deceased Hospital Name" type="text" class="form-control death" id="validationDefault01" placeholder="Hospital Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Hospital Name
+				  </div>
+				</div>
+			  </div>
+			  <div class="row death" style="background-color:blue;color:white">
+				<div class="col-md-5 mb-3">
+				  <h3>Parent 1 Info</h3>
+				</div>
+			  </div>
+			  <div class="input-group row radioQuestion death" title="Parent 1 Type">
+				<div class="col-md-12 mb-3">
+				  <label title="Parent 1 Type" for="validationDefault01">Parent Type</label>
+					  <div class="col-md-13">
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="gridRadios6" id="gridRadios45" value="birth">
+						  <label for="gridRadios1">
+							Parent
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="gridRadios6" id="gridRadios46" value="death">
+						  <label for="gridRadios2">
+							Father
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="gridRadios6" id="gridRadios47" value="marriage">
+						  <label for="gridRadios3">
+							Mother
+						  </label>
+						</div>
+					  </div>
+				</div>
+			  </div>
+			  <div class="row death">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">First Name</label>
+				  <input title="First Name Parent 1" type="text" class="form-control death" id="validationDefault01" placeholder="First Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Middle Name</label>
+				  <input title="Middle Name Parent 1" type="text" class="form-control death" id="validationDefault01" placeholder="Middle Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Last Name</label>
+				  <input title="Last Name Parent 1" type="text" class="form-control death" id="validationDefault01" placeholder="Last Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-xs-1">
+				  <label for="validationDefault01">Suffix</label>
+				  <input title="Suffix Parent 1" type="text" class="form-control death" id="validationDefault01" placeholder="Suffix" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Suffix
+				  </div>
+				</div>
+			  </div>
+			  <div class="row death">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Maiden Name</label>
+				  <input title="Maiden Name Parent 1" type="text" class="form-control death" id="validationDefault01" placeholder="Maiden Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-1 mb-1">
+				  <label for="validationDefault01">Sex</label>
+				  <input title="Sex Parent 1" type="text" class="form-control death" id="validationDefault01" placeholder="M or F" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Sex
+				  </div>
+				</div>
+			  </div>
+			  <div class="row death" style="background-color:blue;color:white">
+				<div class="col-md-5 mb-3">
+				  <h3>Parent 2 Info</h3>
+				</div>
+			  </div>
+			  <div class="input-group row radioQuestion death" title="Parent 2 Type">
+				<div class="col-md-12 mb-3">
+				  <label title="Parent 2 Type" for="validationDefault01">Parent Type</label>
+					  <div class="col-md-13">
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="gridRadios7" id="gridRadios48" value="birth">
+						  <label for="gridRadios1">
+							Parent
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="gridRadios7" id="gridRadios49" value="death">
+						  <label for="gridRadios2">
+							Father
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="gridRadios7" id="gridRadios50" value="marriage">
+						  <label for="gridRadios3">
+							Mother
+						  </label>
+						</div>
+					  </div>
+				</div>
+			  </div>
+			  <div class="row death">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">First Name</label>
+				  <input title="First Name Parent 2" type="text" class="form-control death" id="validationDefault01" placeholder="First Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault01">Middle Name</label>
+				  <input title="Middle Name Parent 2" type="text" class="form-control death" id="validationDefault01" placeholder="Middle Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Last Name</label>
+				  <input title="Last Name Parent 2" type="text" class="form-control death" id="validationDefault01" placeholder="Last Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-xs-1">
+				  <label for="validationDefault01">Suffix</label>
+				  <input title="Suffix Parent 2" type="text" class="form-control death" id="validationDefault01" placeholder="Suffix" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Suffix
+				  </div>
+				</div>
+			  </div>
+			  <div class="row death">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault01">Maiden Name</label>
+				  <input title="Maiden Name Parent 2" type="text" class="form-control death" id="validationDefault01" placeholder="Maiden Name" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Name
+				  </div>
+				</div>
+				<div class="col-md-1 mb-1">
+				  <label for="validationDefault01">Sex</label>
+				  <input title="Sex Parent 2" type="text" class="form-control death" id="validationDefault01" placeholder="M or F" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid Sex
+				  </div>
+				</div>
+			  </div>
+			  <br>
+			  <button title="Submit Button" class="btn btn-primary">Submit form</button>
+			</form>
+		   </div>
+		    <br>
+		   <br>
+		   <br>
+           <div class="container-fluid">
+              <div class="row">
+                      <div class=" col-sm-offset-1 col-sm-10">
+                     </div>
+              </div>   <!--  row ends -->
+          </div>
+        </body>
+		<script src="./obtaining_vital.js"></script>
+</html>

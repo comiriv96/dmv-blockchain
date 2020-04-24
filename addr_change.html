@@ -1,0 +1,131 @@
+<html>
+      <head>
+              <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </head>
+        <body>
+            <!-- Navigation bar -->
+            <div id="pag-nav">
+              <nav class="navbar navbar-inverse">
+                   <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-sm-5">
+                         <ul class="nav navbar-nav">
+                           <li><a href="index.html">Home</a></li>
+                           <li><a href="mydmv.html">MyDMV Account</a></li>
+                           <li><a href="about.html">About</a></li>
+						   <li><a style="padding-top:5px;padding-bottom:5px;margin-top:25px;margin-left:3px;background-color:#ad920f;color:white" title="Logout Button" role="button" class="btn">Logout</a></li>
+                         </ul>
+                       </div>
+                      <div class="col-sm-4" style="text-align:center">
+                         <div class="navbar-header">
+                           <a class="navbar-brand" href="#">DMV of Virginia</a>
+                         </div>
+                       </div>
+					   <div class="col-sm-3" style="padding-left:5px">
+                         <ul class="nav navbar-nav">
+                           <li><a href="http://www.virginia.gov/">Virginia.gov</a></li>
+                           <li><a href="http://www.virginia.gov/government/state-employees/agency-directory">Agencies</a></li>
+                           <li><a href="http://www.governor.virginia.gov/">Governor</a></li>
+                         </ul>
+                       </div>
+                    </div>
+                   </div>
+               </nav>
+            </div>
+            <!-- Navigation Bar ends -->
+			<!-- Modal -->
+			<div id="myModal" class="modal">
+			  <div class="modal-content" style="text-align:center">
+				<h1>Information is being uploaded</h1>
+				<h1>Please Wait...</h1>
+			  </div>
+			</div>
+			<!-- Modal ends -->
+			<div class="container-fluid" style="background-color:lightgray;width:800px">
+			 <form id="customForm">
+			  <div class="row" style="background-color:#fff">
+				  <h1 style="text-align:center;" >Address Change</h1>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+				<div class="col-md-5 mb-3">
+				  <h2>Residence Address</h2>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Street Address</label>
+				  <input title="Resident Street Address" type="text" class="form-control" id="validationDefault01" placeholder="Street Address" required>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault03">City</label>
+				  <input title="Resident City" type="text" class="form-control" id="validationDefault03" placeholder="City" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid City
+				  </div>
+				</div>
+				<div class="col-md-2 mb-3">
+				  <label for="validationDefault04">State</label>
+				  <input title="Resident State" type="text" class="form-control" id="validationDefault04" placeholder="State" value="VA" disabled>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault05">Zip</label>
+				  <input title="Resident Zip" type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Zip Code must contain 5 numbers in the following format: XXXXX
+				  </div>
+				</div>
+			  </div>
+			  <div class="row" style="background-color:green;color:white">
+				<div class="col-md-4 mb-3">
+				  <h2>Mailing Address</h2>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-7 mb-3">
+				  <label for="validationDefault01">Street Address</label>
+				  <input title="Mailing Street Address" type="text" class="form-control" id="validationDefault01" placeholder="Street Address" required>
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-4 mb-3">
+				  <label for="validationDefault03">City</label>
+				  <input title="Mailing City" type="text" class="form-control" id="validationDefault03" placeholder="City" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Invalid City
+				  </div>
+				</div>
+				<div class="col-md-2 mb-3">
+				  <label for="validationDefault04">State</label>
+				  <input title="Mailing State" type="text" class="form-control" id="validationDefault04" placeholder="State" value="VA" disabled>
+				</div>
+				<div class="col-md-3 mb-3">
+				  <label for="validationDefault05">Zip</label>
+				  <input title="Mailing Zip" type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
+				  <div class="field-invalid-feedback" style="display:none">
+				      Zip Code must contain 5 numbers in the following format: XXXXX
+				  </div>
+				</div>
+			  </div>
+			  <br>
+			  <button title="Submit Button" class="btn btn-primary">Submit form</button>
+			 </form>
+		    </div>
+           <div class="container-fluid">
+              <div class="row">
+                      <div class=" col-sm-offset-1 col-sm-10">
+                     </div>
+              </div>   <!--  row ends -->
+          </div>
+        </body>
+		<script src="./addr_change.js"></script>
+</html>

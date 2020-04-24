@@ -128002,7 +128002,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  * Compare this against the index.js from our previous tutorial to see the difference
  * https://gist.github.com/maheshmurthy/f6e96d6b3fff4cd4fa7f892de8a1a1b4#file-index-js
  */
-//import dmv_artifacts from 'DMV.json'
+//import dmv_artifacts from './contracts/DMV.json'
 
 window.App = {
   web3Provider: null,
@@ -128037,7 +128037,7 @@ window.App = {
       App.contracts.DMV.setProvider(App.web3Provider);
 
       return App.bindEvents();*/
-    $.getJSON("DMV.json", function(dmv) {
+    $.getJSON("./contracts/DMV.json", function(dmv) {
       // Instantiate a new truffle contract from the artifact
       App.contracts.DMV = TruffleContract(dmv);
       // Connect provider to interact with contract

@@ -128357,8 +128357,12 @@ window.App = {
 									 if(account[0] != ""){
 										 
 										 var data = JSON.parse(account[0]);
-										$("#carTitleRecordButton0").hide();
 										 var keys = Object.keys(data);
+										 console.log("--------Car Titles--------");
+										 console.log(keys);
+										 if(keys.length > 0){
+											 $("#carTitleRecordButton0").hide();
+										 }
 										 for(var i=0;i<keys.length;i++){
 											 
 											 var carTitle = keys[i];

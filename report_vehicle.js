@@ -128142,7 +128142,7 @@ window.App = {
 									 }
 									 
 									 App.contracts.DMV.deployed().then(function(sub2contractInstance) {
-										  sub2contractInstance.getSoldVehicleReceiptIndex.call(carTitleIndex).then(function(account) {
+										  sub2contractInstance.getSoldVehicleReceiptIndex.call(App.account,carTitleIndex).then(function(account) {
 											 console.log("Sold Vehicle Receipt for logged in user");
 											 console.log(account);
 											 

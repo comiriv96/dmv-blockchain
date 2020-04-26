@@ -128206,7 +128206,7 @@ window.App = {
 							 //console.log(index);
 							 App.contracts.DMV.deployed().then(function(subcontractInstance) {
 									 console.log(index);
-									 subcontractInstance.getRecordRequestIndex(index).then(function(account) {
+									 subcontractInstance.getRecordRequestIndex(App.account,index).then(function(account) {
 										console.log("Vital record request");
 										console.log(account);
 										var indexID = index+1
@@ -128259,7 +128259,7 @@ window.App = {
 							 //console.log(index);
 							 App.contracts.DMV.deployed().then(function(subcontractInstance) {
 									 console.log(index);
-									 subcontractInstance.getSoldVehicleReceiptIndex(index).then(function(account) {
+									 subcontractInstance.getSoldVehicleReceiptIndex(App.account,index).then(function(account) {
 										console.log("Sold Vehicle request");
 										console.log(account);
 										
@@ -128317,7 +128317,7 @@ window.App = {
 							 //console.log(index);
 							 App.contracts.DMV.deployed().then(function(subcontractInstance) {
 									 console.log(index);
-									 subcontractInstance.getReportedVehicleIndex(index).then(function(account) {
+									 subcontractInstance.getReportedVehicleIndex(App.account,index).then(function(account) {
 										console.log("Reported Vehicle request");
 										console.log(account);
 										

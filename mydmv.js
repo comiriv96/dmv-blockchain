@@ -128239,8 +128239,8 @@ window.App = {
 					 console.log("Car Titles");
 					 console.log(account[1]);
 					 var requestCount = account[0]["words"][0];
-					 var carTitles = JSON.parse(account[1]);
 					 if(requestCount > 0){
+						 var carTitles = JSON.parse(account[1]);
 						 $("#soldVehicleRecordButton0").hide();
 						 var requestCountArray = new Array(requestCount); // create an empty array with length 45
 						 
@@ -128357,9 +128357,7 @@ window.App = {
 									 if(account[0] != ""){
 										 
 										 var data = JSON.parse(account[0]);
-										 if(data.length > 0){
-											  $("#carTitleRecordButton0").hide();
-										 }
+										$("#carTitleRecordButton0").hide();
 										 var keys = Object.keys(data);
 										 for(var i=0;i<keys.length;i++){
 											 

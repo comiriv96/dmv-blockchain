@@ -128369,7 +128369,7 @@ window.App = {
 										 console.log(App.account);
 										  $("#myModal h1:first").text("Updating Car Title Registration");
 										  $("#myModal").show();
-										 subcontractInstance2.updateCarTitleInformation(fullCarInformation,{gas: 8000000, from: App.account}).then(function(result) {
+										 subcontractInstance2.updateCarTitleInformation(App.account,fullCarInformation,{gas: 8000000, from: App.account}).then(function(result) {
 											 console.log("Result for creating car title");
 											 console.log(result);
 											 $("#myModal").hide();
